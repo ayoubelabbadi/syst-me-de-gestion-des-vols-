@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Aeroport.Models.Passager>
+
+@{
+    ViewBag.Title = "Passenger list";
+}
+
+<h2>Passenger list</h2>
+
+<p>
+    @Html.ActionLink("Add a passenger", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Date of birth</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Adresse</th>
+        <th>Passport number</th>
+        <th>Nationality</th>
+        <th>Frequent Flyer</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Nom</td>
+            <td>@item.Prenom</td>
+            <td>@item.DateNaissance.ToShortDateString()</td>
+            <td>@item.Email</td>
+            <td>@item.Telephone</td>
+            <td>@item.Adresse</td>
+            <td>@item.NumeroPasseport</td>
+            <td>@item.Nationalite</td>
+            <td>@item.FrequentFlyer</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>

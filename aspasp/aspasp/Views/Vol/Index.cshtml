@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Aeroport.Models.Vol>
+@{
+    ViewBag.Title = " Flights List";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Add Flight", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Departure</th>
+                <th>Arrival</th>
+                <th>Date</th>
+                <th>Airplane</th>
+                <th>Pilot</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vol in Model)
+            {
+                <tr>
+                    <td>@(vol.VilleDepart ?? "N/A")</td>
+                    <td>@(vol.VilleArrivee ?? "N/A")</td>
+                    <td>@vol.DateVol.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>
+                        @if (vol.Avion != null)
+                        {
+                            @vol.Avion.Modele
+                        }
+                        else
+                        {
+                        <span class="text-muted">Unassigned aircraft</span>
+                        }
+                    </td>
+                    <td>
+                        @if (vol.Pilote != null)
+                        {
+                            @($"{vol.Pilote.Prenom} {vol.Pilote.Nom}")
+                        }
+                        else
+                        {
+                        <span class="text-muted">Unassigned Pilot</span>
+                        }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = vol.Id }, new { @class = "btn btn-info btn-xs" })
+                        @Html.ActionLink("Edit", "Edit", new { id = vol.Id }, new { @class = "btn btn-warning btn-xs" })
+                        @Html.ActionLink("Delete", "Delete", new { id = vol.Id }, new { @class = "btn btn-danger btn-xs" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">
+        <p>No flights found. <a href="@Url.Action("Create")">Create the first flight</a></p>
+    </div>
+}

@@ -1,0 +1,262 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Liste des vols";
+}
+
+<div class="hero text-center">
+    <h1 class="display-3 fw-bold">Explore the World with Aeroport Vols</h1>
+    <br />
+    <p class="lead">Fast. Reliable. Comfortable.</p>
+    <br />
+    <a href="/Vol" class="btn btn-light btn-lg mt-3">View Flights</a>
+    <br />
+    <br />
+</div>
+
+<section id="home" class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h1 class="display-3 fw-bold mb-4">Welcome to SkyPort International</h1>
+                    <p class="lead mb-4">Your gateway to the world. Experience seamless travel with world-class facilities and exceptional service.</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <button class="btn btn-primary btn-lg">Book Your Flight</button>
+                        <button class="btn btn-outline-light btn-lg">Explore Services</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="search-card text-dark">
+                    <h3 class="text-primary-custom mb-4">
+                        <i class="fas fa-search me-2"></i>Find Your Flight
+                    </h3>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">From</label>
+                                <input type="text" class="form-control" placeholder="Departure city">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">To</label>
+                                <input type="text" class="form-control" placeholder="Destination city">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Departure</label>
+                                <input type="date" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Return</label>
+                                <input type="date" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Passengers</label>
+                                <select class="form-select">
+                                    <option>1 Passenger</option>
+                                    <option>2 Passengers</option>
+                                    <option>3 Passengers</option>
+                                    <option>4+ Passengers</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Class</label>
+                                <select class="form-select">
+                                    <option>Economy</option>
+                                    <option>Business</option>
+                                    <option>First Class</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100 btn-lg">
+                                    <i class="fas fa-search me-2"></i>Search Flights
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br />
+<br />
+<br />
+<section class="stats-section">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 col-6 mb-4">
+                <div class="stat-number">150+</div>
+                <p class="mb-0">Destinations</p>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <div class="stat-number">50M+</div>
+                <p class="mb-0">Passengers/Year</p>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <div class="stat-number">24/7</div>
+                <p class="mb-0">Operations</p>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <div class="stat-number">98%</div>
+                <p class="mb-0">On-Time Performance</p>
+            </div>
+        </div>
+    </div>
+</section>
+<br />
+<br />
+<br />
+<section id="services" class="section-padding bg-light-custom">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="display-5 fw-bold text-primary-custom mb-3">Our Services</h2>
+                <p class="lead">Experience world-class amenities and services designed to make your journey comfortable and memorable.</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100 text-center p-4">
+                    <div class="card-body">
+                        <i class="fas fa-plane-departure service-icon"></i>
+                        <h4 class="card-title">Flight Operations</h4>
+                        <p class="card-text">Seamless flight operations with state-of-the-art technology and experienced staff ensuring safe and timely departures.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100 text-center p-4">
+                    <div class="card-body">
+                        <i class="fas fa-concierge-bell service-icon"></i>
+                        <h4 class="card-title">VIP Lounge</h4>
+                        <p class="card-text">Relax in our premium lounges with complimentary refreshments, Wi-Fi, and comfortable seating areas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100 text-center p-4">
+                    <div class="card-body">
+                        <i class="fas fa-shopping-bag service-icon"></i>
+                        <h4 class="card-title">Duty-Free Shopping</h4>
+                        <p class="card-text">Explore our extensive duty-free shopping area with luxury brands, local products, and travel essentials.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100 text-center p-4">
+                    <div class="card-body">
+                        <i class="fas fa-utensils service-icon"></i>
+                        <h4 class="card-title">Dining</h4>
+                        <p class="card-text">Savor delicious meals at our restaurants and cafes, featuring international cuisine and local specialties.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100 text-center p-4">
+                    <div class="card-body">
+                        <i class="fas fa-car service-icon"></i>
+                        <h4 class="card-title">Ground Transportation</h4>
+                        <p class="card-text">Convenient transportation options including taxis, shuttles, and car rentals to get you to your destination.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100 text-center p-4">
+                    <div class="card-body">
+                        <i class="fas fa-wifi service-icon"></i>
+                        <h4 class="card-title">Free Wi-Fi</h4>
+                        <p class="card-text">Stay connected with complimentary high-speed Wi-Fi throughout the airport terminals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br />
+<br />
+<br />
+<section id="about" class="section-padding">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <img src="/placeholder.svg?height=500&width=600" alt="Airport Terminal" class="img-fluid feature-img">
+            </div>
+            <div class="col-lg-6 ps-lg-5">
+                <h2 class="display-5 fw-bold text-primary-custom mb-4">About SkyPort International</h2>
+                <p class="lead mb-4">SkyPort International Airport is a world-class aviation hub connecting travelers to over 150 destinations worldwide. With state-of-the-art facilities and exceptional service, we ensure every journey begins and ends with excellence.</p>
+                <div class="row g-4 mb-4">
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-3 fs-4"></i>
+                            <span>Modern Terminals</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-3 fs-4"></i>
+                            <span>24/7 Operations</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-3 fs-4"></i>
+                            <span>Award-Winning Service</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-3 fs-4"></i>
+                            <span>Global Connectivity</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-lg me-3">Learn More</button>
+                <button class="btn btn-outline-primary btn-lg">Contact Us</button>
+            </div>
+        </div>
+    </div>
+</section>
+<br />
+<br />
+<!-- Contact Section -->
+<section id="contact" class="section-padding bg-light-custom">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="display-5 fw-bold text-primary-custom mb-3">Get In Touch</h2>
+                <p class="lead">Have questions or need assistance? Our customer service team is here to help 24/7.</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="card h-100 text-center p-4 border-0 shadow-sm">
+                    <div class="card-body">
+                        <i class="fas fa-phone service-icon"></i>
+                        <h4>Phone</h4>
+                        <p class="mb-0">+1 (555) 123-4567</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card h-100 text-center p-4 border-0 shadow-sm">
+                    <div class="card-body">
+                        <i class="fas fa-envelope service-icon"></i>
+                        <h4>Email</h4>
+                        <p class="mb-0">info@skyport.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card h-100 text-center p-4 border-0 shadow-sm">
+                    <div class="card-body">
+                        <i class="fas fa-map-marker-alt service-icon"></i>
+                        <h4>Address</h4>
+                        <p class="mb-0">123 Airport Blvd<br>Sky City, SC 12345</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br />
+<br />

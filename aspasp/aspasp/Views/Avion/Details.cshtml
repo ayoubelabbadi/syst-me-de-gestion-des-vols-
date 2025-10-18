@@ -1,0 +1,24 @@
+﻿@model aspasp.Models.Avion
+
+@{
+    ViewBag.Title = "Plane Details";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <h4>Airplane</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Model</dt>
+        <dd>@Model.Modele</dd>
+
+        <dt>Capacity</dt>
+        <dd>@Model.Capacite</dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("Back to list", "Index", null, new { @class = "btn btn-default" })
+</p>

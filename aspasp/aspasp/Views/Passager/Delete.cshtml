@@ -1,0 +1,28 @@
+﻿@model Aeroport.Models.Passager
+
+@{
+    ViewBag.Title = "Delete a passenger";
+}
+
+<h2>Delete a passenger</h2>
+
+<h3>Are you sure you want to delete this passenger?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Last Name</dt>
+        <dd>@Model.Nom</dd>
+        <dt>First Name</dt>
+        <dd>@Model.Prenom</dd>
+        <dt>Email</dt>
+        <dd>@Model.Email</dd>
+        <dt>Passport number</dt>
+        <dd>@Model.NumeroPasseport</dd>
+    </dl>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <input type="submit" value="Supprimer" class="btn btn-danger" />
+    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-secondary" })
+}

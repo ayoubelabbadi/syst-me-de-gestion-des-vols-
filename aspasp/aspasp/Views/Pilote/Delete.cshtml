@@ -1,0 +1,57 @@
+﻿@model Aeroport.Models.Pilote
+@{
+    ViewBag.Title = "Delete Pilot";
+}
+
+<h2>Delete Pilot</h2>
+
+<div class="alert alert-warning">
+    <h3>Are you sure you want to remove this Pilot?</h3>
+    <p><strong>Attention :</strong> This action is irreversible.</p>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-header">
+        <h4>Pilot Information</h4>
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>Full name :</dt>
+            <dd>@Model.Prenom @Model.Nom</dd>
+
+            <dt>Date of birth :</dt>
+            <dd>@Model.DateNaissance.ToString("dd/MM/yyyy")</dd>
+
+            <dt>Email :</dt>
+            <dd>@Model.Email</dd>
+
+            <dt>Phone :</dt>
+            <dd>@Model.Telephone</dd>
+
+            <dt>Adresse :</dt>
+            <dd>@Model.Adresse</dd>
+
+            <dt>License number :</dt>
+            <dd>@Model.LicenceNumber</dd>
+
+            <dt>Flight hours :</dt>
+            <dd>@Model.HeuresDeVol</dd>
+
+            <dt>Hiring date:</dt>
+            <dd>@Model.DateEmbauche.ToString("dd/MM/yyyy")</dd>
+        </dl>
+    </div>
+</div>
+
+@using (Html.BeginForm("Delete", "Pilote", new { id = Model.Id }, FormMethod.Post, new { @class = "form-inline" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <input type="submit"
+               value="Confirm deletion"
+               class="btn btn-danger btn-lg"
+               onclick="return confirm('Last confirmation: Permanently delete the Pilot @Model.Prenom @Model.Nom ?');" />
+
+        @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default btn-lg" })
+    </div>
+}

@@ -1,0 +1,32 @@
+﻿@model Aeroport.Models.Vol
+
+@{
+    ViewBag.Title = "Flight details";
+}
+
+<h2>Flight details</h2>
+
+<div class="form-horizontal">
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Departure city</dt>
+        <dd>@Model.VilleDepart</dd>
+
+        <dt>Arrival city</dt>
+        <dd>@Model.VilleArrivee</dd>
+
+        <dt>Flight date</dt>
+        <dd>@Model.DateVol.ToString("f")</dd>
+
+        <dt>Airplane</dt>
+        <dd>@Model.Avion?.Modele</dd>
+
+        <dt>Pilot</dt>
+        <dd>@Model.Pilote?.Nom</dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("Back to list", "Index", null, new { @class = "btn btn-secondary" })
+</p>

@@ -1,0 +1,35 @@
+﻿@model Aeroport.Models.Passager
+
+@{
+    ViewBag.Title = "Passenger details";
+}
+
+<h2>Passenger details</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>Last Name</dt>
+        <dd>@Model.Nom</dd>
+        <dt>First Name</dt>
+        <dd>@Model.Prenom</dd>
+        <dt>Date of birth</dt>
+        <dd>@Model.DateNaissance.ToShortDateString()</dd>
+        <dt>Email</dt>
+        <dd>@Model.Email</dd>
+        <dt>Phone</dt>
+        <dd>@Model.Telephone</dd>
+        <dt>Adresse</dt>
+        <dd>@Model.Adresse</dd>
+        <dt>Passport number</dt>
+        <dd>@Model.NumeroPasseport</dd>
+        <dt>Nationality</dt>
+        <dd>@Model.Nationalite</dd>
+        <dt>Frequent Flyer</dt>
+        <dd>@Model.FrequentFlyer</dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to list", "Index")
+</p>

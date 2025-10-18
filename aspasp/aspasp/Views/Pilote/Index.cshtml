@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Aeroport.Models.Pilote>
+@{
+    ViewBag.Title = "Pilot List ";
+}
+
+<h2>Pilot List</h2>
+
+<p>
+    @Html.ActionLink("Create a new Pilot", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Error!</strong> @TempData["Error"]
+    </div>
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Success!</strong> @TempData["Success"]
+    </div>
+}
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Date of birth</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Adresse</th>
+                <th>License number</th>
+                <th>Flight hours</th>
+                <th>Hiring date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Nom</td>
+                    <td>@item.Prenom</td>
+                    <td>@item.DateNaissance.ToString("dd/MM/yyyy")</td>
+                    <td>@item.Email</td>
+                    <td>@item.Telephone</td>
+                    <td>@item.Adresse</td>
+                    <td>@item.LicenceNumber</td>
+                    <td>@item.HeuresDeVol</td>
+                    <td>@item.DateEmbauche.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info btn-sm" })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" })
+                        <a href="@Url.Action("Delete", new { id = item.Id })"
+                           class="btn btn-danger btn-sm"
+                           onclick="return confirm('Are you sure you want to remove the Pilot ? @item.Prenom @item.Nom ?');">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        <strong>No Pilot found.</strong>
+        @Html.ActionLink("Click here to add one", "Create")
+    </div>
+}

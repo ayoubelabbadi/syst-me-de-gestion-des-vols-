@@ -1,0 +1,45 @@
+﻿@model Aeroport.Models.Pilote
+
+@{
+    ViewBag.Title = "Pilot Details";
+}
+
+<h2>Pilot Details</h2>
+
+<div>
+    <h4>Pilot</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Last Name</dt>
+        <dd>@Model.Nom</dd>
+
+        <dt>First Name</dt>
+        <dd>@Model.Prenom</dd>
+
+        <dt>Date of birth</dt>
+        <dd>@Model.DateNaissance.ToShortDateString()</dd>
+
+        <dt>Email</dt>
+        <dd>@Model.Email</dd>
+
+        <dt>Phone</dt>
+        <dd>@Model.Telephone</dd>
+
+        <dt>Adresse</dt>
+        <dd>@Model.Adresse</dd>
+
+        <dt>License Number</dt>
+        <dd>@Model.LicenceNumber</dd>
+
+        <dt>Flight Hours</dt>
+        <dd>@Model.HeuresDeVol</dd>
+
+        <dt>Hiring Date</dt>
+        <dd>@Model.DateEmbauche.ToShortDateString()</dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to list", "Index")
+</p>

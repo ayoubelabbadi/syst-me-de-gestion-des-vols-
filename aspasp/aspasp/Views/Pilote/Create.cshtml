@@ -1,0 +1,99 @@
+﻿@model Aeroport.Models.Pilote
+
+@{
+    ViewBag.Title = "Create a pilot ";
+}
+
+<h2>Create a pilot </h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Pilot</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Nom, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Nom, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Nom)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Prenom, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Prenom, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Prenom)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.DateNaissance, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.DateNaissance, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+                @Html.ValidationMessageFor(m => m.DateNaissance)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "email" })
+                @Html.ValidationMessageFor(m => m.Email)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Telephone, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Telephone, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Telephone)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Adresse, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Adresse, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Adresse)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.LicenceNumber, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.LicenceNumber, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.LicenceNumber)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.HeuresDeVol, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.HeuresDeVol)
+                @Html.ValidationMessageFor(m => m.HeuresDeVol)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.DateEmbauche, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.DateEmbauche, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+                @Html.ValidationMessageFor(m => m.DateEmbauche)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink("Back to list", "Index")
+</div>
